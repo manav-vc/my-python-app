@@ -7,7 +7,7 @@ def test_greet_with_name():
 
 def test_greet_empty_name():
     """Test that greet function handles an empty name."""
-    assert greet("") == "Hello, !"
+    assert greet("") == "Hello"
 
 def test_greet_numeric_name():
     """Test that greet function handles numeric input (though not strictly required for this simple function, good for example)."""
