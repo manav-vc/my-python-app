@@ -1,0 +1,25 @@
+# .travis.yml
+language: python
+python:
+  - "3.8"
+  - "3.9"
+  - "3.10" # Adding a more recent version for completeness
+
+# Install dependencies
+install:
+  - pip install -r requirements.txt
+
+# Run tests
+script:
+  # Run pytest and generate a coverage report for the 'myapp' directory
+  # The '--cov-report=term-missing' shows uncovered lines in the terminal output
+  - pytest --cov=myapp --cov-report=term-missing tests/
+
+# Notify on completion
+notifications:
+  email:
+    # Replace with your actual email address
+    recipients:
+      - manavchaudhary462@gmail.com
+    on_success: change # Only notify on change from failure to success or vice-versa
+    on_failure: always # Always notify on failure
