@@ -3,23 +3,24 @@ language: python
 python:
   - "3.8"
   - "3.9"
-  - "3.10" # Adding a more recent version for completeness
+  - "3.10" 
 
 # Install dependencies
 install:
   - pip install -r requirements.txt
 
 # Run tests
+#This section defines the commands that Travis CI will execute to run your tests
 script:
   # Run pytest and generate a coverage report for the 'myapp' directory
   # The '--cov-report=term-missing' shows uncovered lines in the terminal output
   - pytest --cov=myapp --cov-report=term-missing tests/
 
 # Notify on completion
+#This section configures how Travis CI will notify you about the build status
 notifications:
   email:
-    # Replace with your actual email address
     recipients:
       - manavchaudhary462@gmail.com
     on_success: change # Only notify on change from failure to success or vice-versa
-    on_failure: always # Always notify on failure
+    on_failure: always # Alwaysx   notify on failure
